@@ -1,4 +1,4 @@
-# CNN-from-scratch-numpy-only
+# CNN-from-scratch
 
 ## Convolutional Neural Networks (CNNs) Theory and Basics
 
