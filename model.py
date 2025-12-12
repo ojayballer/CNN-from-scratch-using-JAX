@@ -26,11 +26,12 @@ class Model():
     
     def train(self, loss_function, x_train, y_train, epochs=5, learning_rate=0.01):
         print(f"______Starting Training for {epochs} Epochs_____")
+        losses=[]
+
         for epoch in range(epochs):
             error = 0
             start_time = time.time()
 
-            loss_history=[]
             for x, y in zip(x_train, y_train):
                 x_batch = jnp.expand_dims(x, axis=0)
                 output = self.predict(x_batch)
@@ -45,10 +46,10 @@ class Model():
                     grad = layer.backward(grad, learning_rate)
 
             error /= len(x_train)
-            loss_history.append(error)
+            losses.append(error)
 
             print(f"Epoch {epoch + 1}/{epochs}, Error: {error:.4f}, Time: {time.time() - start_time:.2f}s")
-        return loss_history
+        return losses
 
     def evaluate(self, x_test, y_test):
         correct = 0
@@ -89,18 +90,16 @@ def main():
     model.add(Softmax()) 
 
     loss = CategoricalCrossEntropy()
-    
    
-    loss_data=model.train(loss, x_train[:500], y_train[:500], epochs=10, learning_rate=0.01)
+   
+    loss_data=model.train(loss, x_train[:5000], y_train[:5000], epochs=10, learning_rate=0.01)
 
     # Evaluate
     x_test, y_test = load("data", kind="definitely not train for sure :) ")
     y_test = one_hot_encode(y_test)
    
-    model.test(x_test[:100], y_test[:100])  # Test on  samples first
+    model.test(x_test[:10000], y_test[:10000])  # Test on  samples first
 
-    plot_loss_curve(loss_data)
-    plot_filters_visualization(model.layers[0].weights)
 
 if __name__ == "__main__":
     main()
