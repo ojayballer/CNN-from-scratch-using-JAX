@@ -21,6 +21,19 @@ This approach demonstrates a fundamental understanding of the calculus behind de
 
 ---
 
+## Mathematical Derivations
+
+Since this project avoids automatic differentiation, every gradient used in the training process had to be derived manually.
+
+For a detailed breakdown of the calculus, including the chain rule applications for the Convolutional and Pooling layers, please refer to the **[THEORY.md](./THEORY.md)** file included in this repository.
+
+It covers:
+1.  **Forward Propagation:** The mathematical formulation of the Conv2D and MaxPool operations.
+2.  **Backpropagation:** The explicit derivation of gradients $\frac{\partial L}{\partial W}$ and $\frac{\partial L}{\partial X}$ for 4D tensors.
+3.  **Shape Analysis:** How dimensions change through the network pipeline.
+
+---
+
 ## Performance & Results
 
 The model was trained on the MNIST handwritten digit dataset.
@@ -85,7 +98,7 @@ The model processes the input as a 3D volume (Channels, Height, Width).
 * `Pooling_layer.py`: Implements Max Pooling and gradient upsampling.
 * `DenseLayer.py`: Standard fully connected layer implementation.
 * `loss.py`: Cross-Entropy loss and its derivative calculation.
-* `THEORY.md`: Detailed mathematical derivation of the backpropagation formulas used in this project.
+* `THEORY.md`: **[Deep Dive]** Detailed mathematical derivation of the backpropagation formulas used in this project.
 
 ---
 
@@ -108,3 +121,5 @@ The model processes the input as a 3D volume (Channels, Height, Width).
     ```
 
 ---
+
+**Author:** OjayBaller
