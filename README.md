@@ -1,9 +1,6 @@
 # CNN From Scratch using JAX (Manual Backpropagation)
 
-![JAX](https://img.shields.io/badge/Built%20With-JAX-blue?style=flat&logo=jax)
-![Python](https://img.shields.io/badge/Python-3.10%2B-yellow?style=flat&logo=python)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=flat)
-![Accuracy](https://img.shields.io/badge/Test%20Accuracy-95.77%25-brightgreen?style=flat)
+
 
 ## Project Overview
 
@@ -122,4 +119,4 @@ The model processes the input as a 3D volume (Channels, Height, Width).
 
 ---
 
-**Author:** OjayBaller
+
