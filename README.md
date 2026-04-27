@@ -103,7 +103,7 @@ The model processes the input as a 3D volume (Channels, Height, Width).
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/ojayballer/CNN-from-scratch-using-JAX.git](https://github.com/ojayballer/CNN-from-scratch-using-JAX.git)
+    git clone https://github.com/ojayballer/CNN-from-scratch-using-JAX.git
     cd CNN-from-scratch-using-JAX
     ```
 
